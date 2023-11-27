@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Player from './Player';
+import players from './players'
+import './App.css'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    // L'affichage de  tous les joueurs dans PlayerList.js, en cartographiant tous les éléments du tableau de joueurs
+    <div  className='info'  >  { players.map(el => <Player     pr={el}  />)} </div>
+  )
 }
-
-export default App;
+// Spécifie les valeurs par défaut des props
+Player.defaultprops ={
+    " id": null,
+  "name":" inconnu",
+  "team":"inconnu",
+  "nationality": "inconnu",
+  "jerseyNumber": null,
+  "age": null,
+  "imageUrl": null };
+export default App
